@@ -14,9 +14,39 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
       $(".btn").click(function () {
-        console.log("hi");
-        $("h1").css("color", "red");
+        console.log("click");
       });
+      $(".btn").dblclick(function () {
+        console.log("dblclick");
+      });
+      $(".btn").mousedown(function () {
+        console.log("mousedown");
+      });
+      $(".btn").mouseup(function () {
+        console.log("mouseup");
+      });
+      $(".btn").contextmenu(function () {
+        console.log("contextmenu");
+      });
+      $(".btn").mouseenter(function () {
+        console.log("mouseenter");
+        // $("h1").css("color", "red");
+      });
+      $(".btn").mouseleave(function () {
+        console.log("mouseleave");
+        // $("h1").css("color", "black");
+      });
+
+      $(".btn").hover(
+        function () {
+          console.log("hover");
+          $("h1").css("color", "red");
+        },
+        function () {
+          console.log("hover2");
+          $("h1").css("color", "black");
+        }
+      );
 
       $("input").click(function () {
         console.log("input clicked");

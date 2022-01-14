@@ -7,14 +7,20 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="">
-      <input type="text" value="123" />
+    <form action="" method="">
+      <input type="text" value="123" name="num" />
+      <button type="submit">送出</button>
     </form>
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
       $("input").val("666");
       console.log("input value", $("input").val());
+
+      $("button").click(function () {
+        event.preventDefault();
+        console.log("hi");
+      });
     </script>
   </body>
 </html>
