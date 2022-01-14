@@ -10,6 +10,9 @@
         width: 800px;
         height: 800px;
         background-color: #ccc;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
       }
 
       .box {
@@ -21,23 +24,39 @@
   </head>
   <body>
     <div class="wrap">
+      <p>p1</p>
       <div class="box">box1</div>
       <div class="box">box2</div>
       <div class="box">box3</div>
+      <p>p2</p>
       <div class="box">box4</div>
       <div class="box">box5</div>
       <div class="box">box6</div>
       <div class="box">box7</div>
+      <p>p3</p>
       <div class="box">box8</div>
       <div class="box">box9</div>
       <div class="box">box10</div>
+      <p>p4</p>
       <div class="box">box11</div>
       <div class="box">box12</div>
     </div>
 
+    <div class="wrap">
+      <div class="box">box11</div>
+      <p>1</p>
+    </div>
+
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
-      $(".box:first-child").css("background", "red");
+      //   $(".box:first-child").css("background", "red");
+      //   $(".box:last-child").css("background", "blue");
+      //   $(".box:first-of-type").css("background", "purple");
+      //   $(".wrap :nth-child(1)").css("background", "green");
+      //   $("p:nth-of-type(2)").css("background", "blue");
+      //   $("div:nth-child(2)").css("background", "blue");
+      //   $("div:only-child").css("background", "blue");
+      $("div:only-of-type").css("background", "blue");
     </script>
   </body>
 </html>
