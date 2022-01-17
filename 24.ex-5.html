@@ -76,8 +76,24 @@
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
       $(".slider-dots li").hover(function () {
-        console.log("this", $(this));
-        $(this).css("background", "#fff");
+        console.log("this", $(this).index());
+        $(this)
+          .css("background", "#fff")
+          .siblings()
+          .css("background", "transparent");
+
+        // if ($(this).index() === 0) {
+        //   $("ul.img-wrap").css("transform", "translateX(0px)");
+        // }
+        // if ($(this).index() === 1) {
+        //   $("ul.img-wrap").css("transform", "translateX(-800px)");
+        // }
+        // if ($(this).index() === 2) {
+        //   $("ul.img-wrap").css("transform", "translateX(-1600px)");
+        // }
+
+        const moveX = $(this).index() * -800;
+        $("ul.img-wrap").css("transform", `translateX(${moveX}px)`);
       });
     </script>
   </body>
