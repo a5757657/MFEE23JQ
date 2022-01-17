@@ -50,22 +50,34 @@
       // 拿html .html() -> JS 的 innerHTML
 
       $("#city").change(function () {
-        console.log("city value", $("#city").val());
-        // $("#district option").eq(0).text("123");
-        // $("#district option").eq(1).text("222");
-        // $("#district option").eq(2).text("333");
+        // console.log("city value", $("#city").val());
+        // console.log("districtArray data:", districtArray[$("#city").val()][0]);
 
+        // 作法一
+        // $("#district option")
+        //   .eq(0)
+        //   .text(districtArray[$("#city").val()][0] + "區");
+        // $("#district option")
+        //   .eq(1)
+        //   .text(districtArray[$("#city").val()][1] + "區");
+        // $("#district option")
+        //   .eq(2)
+        //   .text(districtArray[$("#city").val()][2] + "區");
+
+        // 作法二
         // for (let i = 0; i < $("#district option").length  ; i++) {
 
         // }
 
-        // jq Foreach
+        // 作法三 用 jq Foreach 的寫法
         $("#district option").each(function (index, value) {
-          console.log("index", index);
-          console.log("value", $(value));
+          //   console.log("index", index);
+          //   console.log("value", $(value));
+          $(value).text(districtArray[$("#city").val()][index] + "區");
         });
       });
 
+      // 綁定事件沒事不要放到別人的綁定事件裡面，否則可能會沒綁到
       $("button").click(function () {
         console.log("btn clicked");
       });
