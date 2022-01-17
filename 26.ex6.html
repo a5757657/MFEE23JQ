@@ -35,11 +35,40 @@
       </div>
     </div>
 
+    <button>click</button>
+
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
+      let districtArray = [
+        ["七堵", "中正", "暖暖"],
+        ["中正", "大安", "信義"],
+        ["蘆洲", "三重", "新店"],
+      ];
+
       // 拿文字 .text() -> JS 的 innerTEXT
       // 拿value .val() -> JS 的 value
       // 拿html .html() -> JS 的 innerHTML
+
+      $("#city").change(function () {
+        console.log("city value", $("#city").val());
+        // $("#district option").eq(0).text("123");
+        // $("#district option").eq(1).text("222");
+        // $("#district option").eq(2).text("333");
+
+        // for (let i = 0; i < $("#district option").length  ; i++) {
+
+        // }
+
+        // jq Foreach
+        $("#district option").each(function (index, value) {
+          console.log("index", index);
+          console.log("value", $(value));
+        });
+      });
+
+      $("button").click(function () {
+        console.log("btn clicked");
+      });
     </script>
   </body>
 </html>
