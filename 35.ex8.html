@@ -66,6 +66,14 @@
       $("#btnRight").click(function () {
         // if()?
         $(".box").css("left", "+=100");
+        console.log("left", parseInt($(".box").css("left")));
+      });
+
+      $(document).on("keydown", function () {
+        console.log("hi", event.which);
+        if (event.which === 39) {
+          $(".box").css("left", "+=100");
+        }
       });
     </script>
   </body>
