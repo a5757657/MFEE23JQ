@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add class</title>
+
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        transition: 0.5s;
+      }
+
+      .blue {
+        background-color: lightskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="addClass">add Class</button>
+    <button id="rmClass">remove Class</button>
+    <button id="toggleClass">toggle Class</button>
+    <button id="myToggle">myToggle Class</button>
+
+    <div class="box blue"></div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+      $("#addClass").click(function () {
+        $(".box").addClass("blue");
+      });
+
+      $("#rmClass").click(function () {
+        $(".box").removeClass("blue");
+      });
+
+      $("#toggleClass").click(function () {
+        $(".box").toggleClass("blue");
+      });
+
+      $("#myToggle").click(function () {
+        console.log("hi", $(".box").hasClass("blue"));
+        if ($(".box").hasClass("blue")) {
+          $(".box").removeClass("blue");
+        } else {
+          $(".box").addClass("blue");
+        }
+      });
+    </script>
+  </body>
+</html>
